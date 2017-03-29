@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-lazy-init="true"
+	
+	>
+	<import resource="armor_context.xml"/>
+	
+	<bean id="Hands" class="ua.mystudy.spring.stobf.bodypart.BodyPart" scope="prototype"
+	p:lightArmor-ref="LightArmor">	
+	</bean>	
+	<bean id="Body" class="ua.mystudy.spring.stobf.bodypart.BodyPart" scope="prototype"
+	p:lightArmor-ref="LightArmor">	
+	</bean>			
+	<bean id="Head" class="ua.mystudy.spring.stobf.bodypart.BodyPart" scope="prototype"
+	p:heavyArmor-ref="HeavyArmor">	
+	</bean>		
+	<bean id="Legs" class="ua.mystudy.spring.stobf.bodypart.BodyPart" scope="prototype"
+	p:lightArmor-ref="LightArmor">	
+	</bean>	
+
+	</beans>

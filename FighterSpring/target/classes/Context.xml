@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	default-init-method="initObject" default-destroy-method="destroyObject"
+	default-lazy-init="true"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+<context:annotation-config/>	
+<import resource="fighter_context.xml"/>	
+<bean class="ua.mystudy.spring.stobf.main.MyBeanPostProcessor"/>
+
+<bean id="FightManager" class="ua.mystudy.spring.stobf.manager.FightManager">
+	<lookup-method name="createFigter" bean="Garold"/>
+	</bean>
+	<bean id="fighterPool" class="ua.mystudy.spring.stobf.pool.FighterPool">
+		<property name="unitCollection">
+			<list>
+				<ref bean="fighter"/>
+				<bean class="ua.mystudy.spring.stobf.fighter.Fighter"
+						parent="baseModel" scope="prototype">
+						<constructor-arg value = "Pupkin" index = "0" type="String"/>
+        				<constructor-arg value = "10.6" index = "1" type="float"/>
+        				<constructor-arg value = "5.9" index = "2" type="float"/>
+       					<constructor-arg value = "5.6" index = "3" type="float"/>	
+       					<property name="hands" ref = "Hands"/>
+        				<property name="body" ref = "Body"/>
+       					<property name="head" ref = "Head"/>
+        				<property name="legs" ref = "Legs"/>
+	
+					</bean>
+				</list>
+			</property>
+		</bean>
+		
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-lazy-init="true"
+	>
+	
+	
+	<bean id="HeavyArmor" class="ua.mystudy.spring.stobf.armorparts.Heavy" scope="prototype">
+	    <constructor-arg value = "Heavy" index = "0" type="String"/>
+        <constructor-arg value = "15.6" index = "1" type="float"/>
+        </bean>
+	
+	<bean id="LightArmor" class="ua.mystudy.spring.stobf.armorparts.Light">
+	<constructor-arg value = "Light" index = "0" type="String"/>
+     <constructor-arg value = "5.9" index = "1" type="float"/>
+        </bean>
+	
+	</beans>
